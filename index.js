@@ -5,6 +5,12 @@ const app = express();
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.json({
+    mssg: "healthy",
+  });
+});
+
 app.post("/hash_passwords", async (req, res) => {
   console.log(req.body);
   const { password } = req.body;
